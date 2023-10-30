@@ -33,6 +33,8 @@ def find_char(matrix, char):
 
 def playfair_encrypt(plaintext, key):
     matrix = create_matrix(key)
+    for line in matrix:
+        print(line)
     plaintext = plaintext.replace(' ', '').upper()
     ciphertext = []
     i = 0
@@ -47,7 +49,7 @@ def playfair_encrypt(plaintext, key):
 
         char1 = plaintext[i]
         char2 = plaintext[i + 1] if i + 1 < len(plaintext) else 'X'
-        print(char1,char2)
+
         row1, col1 = find_char(matrix, char1)
         row2, col2 = find_char(matrix, char2)
 
